@@ -46,3 +46,10 @@ LL = LinkedList()
 LL.add_to_head(1)
 LL.reverse_list(LL.head, LL.head.get_next())
 
+#
+#is there a node? return if there is
+#if a node is not the head keep traversing
+#make the last node the head if next is None
+#give set_next the "prev" val => set_next(prev) or get_next(prev)
+#can i figure out iteratively?
+
