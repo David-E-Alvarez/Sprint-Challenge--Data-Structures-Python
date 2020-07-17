@@ -40,3 +40,9 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         pass
+
+
+LL = LinkedList()
+LL.add_to_head(1)
+LL.reverse_list(LL.head, LL.head.get_next())
+
