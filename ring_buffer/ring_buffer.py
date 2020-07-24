@@ -1,36 +1,35 @@
 class RingBuffer:
     def __init__(self, capacity):
-        self.capacity = 3
-        self.arr = []
+        self.capacity = capacity
+        self.arr = [None] * self.capacity
+        self.old = 0
 
     def append(self, item):
-        
-        while len(self.arr) < self.capacity:
-            self.arr.insert(tail,item)
-            tracker += 1
-            print("tracker 2: ", tracker)
-            if tracker is self.capacity - 1:
-                tracker = 0
-            print("tracker 3: ", tracker)
-            return self.arr
+        #old variable = 0
+        #add item at old's location; arr[old]
+        self.arr[self.old] = item
+        #check to see if old + 1 is equal to capacity and if so set old to 0
+        if self.old + 1 == self.capacity:
+            self.old = 0
+        else:
+            self.old += 1
+        # if not add 1 to old
+
 
     def get(self):
-        return self.arr
+        arr2 = []
+        for i in range(0, len(self.arr)):
+            if(self.arr[i] is not None):
+                arr2.append(self.arr[i])
+        return arr2
 
-#try with a doubly link list
-#other data structures e.g. singly linked list
-rb = RingBuffer(3)
-print(rb.arr)
-rb.append('a')
-print('--->',rb.get())
-rb.append('b')
-print('--->',rb.get())
-rb.append('c')
-print('--->',rb.get())
-rb.append('d')
-print('--->',rb.get())
-rb.append('e')
-print('--->',rb.get())
+#rb = RingBuffer(5)
+# rb.append('a')
+# rb.append('b')
+# rb.append('c')
+
+# rb.append('d')
+# rb.append('e')
 
 
 
